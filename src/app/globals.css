@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 커스텀 폰트 - 배민 을지로체 */
+@font-face {
+  font-family: 'BM Euljiro';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMEuljiro10yearslater.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 커스텀 폰트 - Cafe24 */
+@font-face {
+  font-family: 'Cafe24 Oneprettynight';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-euljiro: 'BM Euljiro', sans-serif;
+  --font-cafe24: 'Cafe24 Oneprettynight', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* 기본 스타일 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-white antialiased;
+  overflow-x: hidden;
+}
+
+/* 폰트 클래스 */
+.font-cafe24 {
+  font-family: var(--font-cafe24);
+}
+
+.font-euljiro {
+  font-family: var(--font-euljiro);
+}
+
+/* 섹션 공통 스타일 */
+.section-mobile {
+  @apply w-full max-w-[390px] mx-auto relative overflow-hidden;
+}
+
+/* 입력 필드 스타일 */
+.input-field {
+  @apply w-full px-4 py-4 bg-white border border-gray-300 rounded-xl text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200;
+}
+
+.input-field:focus {
+  @apply shadow-lg;
+}
+
+/* 버튼 호버 효과 */
+.btn-primary {
+  @apply bg-black text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-gray-800 transform scale-105;
+}
+
+/* 텍스트 그라디언트 */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ff6262] to-[#eb2fde];
+}
